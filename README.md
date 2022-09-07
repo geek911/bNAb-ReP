@@ -13,22 +13,24 @@ bNAb-ReP has been successfully tested on Linux systems
 - Create bNAb-ReP environment in command line: conda create --name bNAb-ReP
 - Activate bNAb-ReP environment in command line: source activate bNAb-ReP
 - Install require packages by running the following in command line:
-  - conda install -c r r
-  - conda install -c bioconda r-bio3d
-  - conda install -c r r-rcurl
-  - conda install -c r r-jsonlite
-  - conda install -c cidermole jdk8 (Linux) or conda install -c cyclus java-jdk (Mac)
-  - conda install -c bioconda mafft
-  - conda install -c r r-data.table
-  - conda install -c r r-foreach
-  - conda install -c r r-doparallel 
-  - conda install -c r r-rocr
-  - conda install -c conda-forge r-geosphere
-  - conda install -c conda-forge readline
+  - conda install --channel r r
+  - conda install --channel bioconda r-bio3d
+  - conda install --channel r r-rcurl
+  - conda install --channel r r-jsonlite
+  - conda install --channel bioconda mafft
+  - conda install --channel r r-data.table
+  - conda install --channel r r-foreach
+  - conda install --channel r r-doparallel 
+  - conda install --channel r r-rocr
+  - conda install --channel conda-forge r-geosphere
+  - conda install --channel conda-forge readline
+
+- Install Java 8 (version 1.8.x) (https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
+
 - Install R library h2o (version 3.16.0.2) (https://cran.r-project.org/web/packages/h2o/index.html) (see "Old sources") manually by:
   - Download h2o package (sepecific version) in command line: wget https://cran.r-project.org/src/contrib/Archive/h2o/h2o_3.16.0.2.tar.gz
   - Open R in command line by typing: R
-  - Run the following command in R with the path to the downloaded directory in the first argument: install.packages( "path/h2o_3.16.0.2.tar.gz", type = "source", repos = NULL )
+  - Run the following command in R with the path to the downloaded directory in the first argument: install.packages( "path/h2o_3.16.0.2.tar.gz", type = "source", repos = NULL)
   
 
 ## Run 
@@ -50,7 +52,6 @@ R --vanilla < run_bNAb-ReP_v1.1-3.R VRC01 testing.fasta mafft OUTPUT
 
 ### Result
 Results will be saved in OUTPUT_probabilities.txt. For each sequence in the input alignment file a probability value between 0-1 is calculated, with higher values corresponding to neutralization sensitivity.
-
 
 
 ### Example/Test
